@@ -8,419 +8,122 @@
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 </head>
-<body>
+<body class="home">
 
-<a class="skip" href="#start">Skip to content</a>
+<a class="skip" href="#search">Skip to search</a>
 
 <header class="hero">
   <div class="wrap">
     <p class="kicker">Nintendo 3DS · Luma3DS custom firmware</p>
     <h1>Your Modded 3DS</h1>
-    <p class="lede">Everything your console can now do, and how to do it. Start at the top — you don't need to read it all.</p>
+    <p class="lede">Everything your console can now do. Search below, or pick a topic.</p>
   </div>
 </header>
 
-<nav class="toc" aria-label="Sections">
-  <div class="wrap">
-    <a href="#start">Start here</a>
-    <a href="#menus">Menus</a>
-    <a href="#apps">Installing apps</a>
-    <a href="#hshop">hShop</a>
-    <a href="#themes">Themes</a>
-    <a href="#games">Games</a>
-    <a href="#files">Moving files</a>
-    <a href="#safety">Safety</a>
-    <a href="#links">Links</a>
-  </div>
-</nav>
-
 <main class="wrap">
 
-<!-- ═══════════════════════════════ START ═══════════════════════════════ -->
-<section id="start">
-  <h2>Start here</h2>
-
-  <p>Your 3DS runs <strong>Luma3DS</strong>, a custom firmware. It still works exactly like a normal 3DS — everything you had before is still there. It can now also run homebrew apps and games from older consoles.</p>
-
-  <div class="grid-3">
-    <div class="card">
-      <h3>Nothing is broken</h3>
-      <p>Your games, saves, and eShop purchases all still work. Custom firmware sits underneath and stays out of the way.</p>
-    </div>
-    <div class="card">
-      <h3>The SD card is everything</h3>
-      <p>All homebrew, games, and themes live on the SD card. <strong>Always power the console fully off before removing it.</strong></p>
-    </div>
-    <div class="card">
-      <h3>You can't easily break it</h3>
-      <p>A full backup of your console exists. See <a href="#safety">Safety &amp; backups</a> for what it is and where it lives.</p>
-    </div>
+  <div class="searchbar">
+    <input id="search" type="search" placeholder="Search — try “pokemon”, “theme”, “wifi”, “DS games”…" autocomplete="off" aria-label="Search topics">
+    <p class="hint" id="hint">9 topics</p>
   </div>
 
-  <div class="callout do">
-    <strong>First thing to do:</strong> open <strong>FBI</strong> on your Home Menu, go to <em>SD → cias</em>, and install everything in that folder. That sets up all the apps below. Instructions in <a href="#apps">Installing apps</a>.
-  </div>
-</section>
+  <div class="cards" id="cards">
 
-<!-- ═══════════════════════════════ MENUS ═══════════════════════════════ -->
-<section id="menus">
-  <h2>The three menus worth knowing</h2>
-  <p>These are button combos, not icons. They're the main things that separate a modded 3DS from a stock one.</p>
+    <a class="topic" href="apps.html"
+       data-keywords="install cia 3dsx fbi universal updater app store homebrew download update icon home menu">
+      <span class="ico">📦</span>
+      <h2>Installing apps</h2>
+      <p>What <code>.cia</code> and <code>.3dsx</code> mean, using FBI, and Universal Updater.</p>
+      <span class="first">Start here first</span>
+    </a>
 
-  <table>
-    <thead>
-      <tr><th>Combo</th><th>When</th><th>What you get</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><kbd>L</kbd>+<kbd>↓</kbd>+<kbd>Select</kbd></td>
-        <td>Any time, even mid-game</td>
-        <td><strong>Rosalina</strong> — screenshots, cheats, and system tools</td>
-      </tr>
-      <tr>
-        <td>Hold <kbd>Select</kbd></td>
-        <td>While powering on</td>
-        <td><strong>Luma config</strong> — firmware settings. You rarely need this.</td>
-      </tr>
-      <tr>
-        <td>Hold <kbd>Start</kbd></td>
-        <td>While powering on</td>
-        <td><strong>Payload menu</strong> — launches GodMode9 and the GBA player</td>
-      </tr>
-    </tbody>
-  </table>
+    <a class="topic" href="games.html"
+       data-keywords="games play ds nds gba gameboy advance snes super nintendo neo geo turf masters gb gbc nes genesis mega drive megadrive emulator retroarch twilight snes9x pokemon unbound rom roms virtual console injection">
+      <span class="ico">🕹️</span>
+      <h2>Playing games</h2>
+      <p>DS, Game Boy Advance, SNES, Neo Geo, Game Boy, NES and Genesis — which app for which system.</p>
+    </a>
 
-  <h3>Rosalina <span class="tag">most useful</span></h3>
-  <p>Press <kbd>L</kbd>+<kbd>↓</kbd>+<kbd>Select</kbd> at any time. The game pauses and a text menu appears.</p>
-  <ul class="tight">
-    <li><strong>Take screenshot</strong> — saves to <code>/luma/screenshots/</code> on the SD card</li>
-    <li><strong>Cheats</strong> — per-game cheat codes, if available</li>
-    <li><strong>Process list</strong>, <strong>Debugger</strong> — advanced, ignore these</li>
-  </ul>
-  <p>Press <kbd>B</kbd> to back out, and <kbd>L</kbd>+<kbd>↓</kbd>+<kbd>Select</kbd> again to close and resume.</p>
+    <a class="topic" href="menus.html"
+       data-keywords="rosalina luma menu button combo screenshot cheats payload godmode9 boot start select hidden">
+      <span class="ico">🎛️</span>
+      <h2>Hidden menus</h2>
+      <p>Rosalina, the Luma config, and the payload menu — the button combos that matter.</p>
+    </a>
 
-  <figure class="shot" data-img="rosalina.png" data-cap="The Rosalina menu, opened mid-game"></figure>
+    <a class="topic" href="themes.html"
+       data-keywords="theme themes anemone theme plaza splash splashscreen boot custom look badges home menu appearance">
+      <span class="ico">🎨</span>
+      <h2>Custom themes</h2>
+      <p>Change your Home Menu look and boot splash with Anemone3DS.</p>
+    </a>
 
-  <h3>Payload menu</h3>
-  <p>Hold <kbd>Start</kbd> as you power on. You get a short list:</p>
-  <ul class="tight">
-    <li><strong>GodMode9</strong> — a file manager and backup tool that runs outside the operating system. Powerful; don't poke around unless following a guide.</li>
-    <li><strong>open_agb_firm</strong> — plays Game Boy Advance games. See <a href="#gba">Game Boy Advance</a>.</li>
-  </ul>
-</section>
+    <a class="topic" href="files.html"
+       data-keywords="ftp ftpd wifi wireless transfer files android phone sd card copy move computer usb">
+      <span class="ico">📡</span>
+      <h2>Moving files</h2>
+      <p>Send files to the console wirelessly from an Android phone, or by SD card.</p>
+    </a>
 
-<!-- ═══════════════════════════════ APPS ═══════════════════════════════ -->
-<section id="apps">
-  <h2>Installing apps</h2>
+    <a class="topic" href="hshop.html"
+       data-keywords="hshop 3hs eshop download games titles store archive shut down closed">
+      <span class="ico">🛒</span>
+      <h2>hShop</h2>
+      <p>The community archive that replaced the shut-down eShop, and its 3hs app.</p>
+    </a>
 
-  <h3>The two file types</h3>
-  <p>Homebrew comes in two formats. This trips everyone up once, then never again.</p>
+    <a class="topic" href="safety.html"
+       data-keywords="safety backup nand brick bricked broken recover restore checkpoint saves sd card corrupt rules danger help">
+      <span class="ico">🛟</span>
+      <h2>Safety &amp; backups</h2>
+      <p>Your NAND backup, saving game saves, and the rules that keep it healthy.</p>
+      <span class="first warn-tag">Read once</span>
+    </a>
 
-  <table>
-    <thead>
-      <tr><th></th><th><code>.cia</code></th><th><code>.3dsx</code></th></tr>
-    </thead>
-    <tbody>
-      <tr><th scope="row">What it is</th><td>A real installed app</td><td>A loose program file</td></tr>
-      <tr><th scope="row">Where it appears</th><td>Icon on your Home Menu, like any game</td><td>Only inside the Homebrew Launcher</td></tr>
-      <tr><th scope="row">How to install</th><td>Open it in <strong>FBI</strong> → <em>Install and delete CIA</em></td><td>Drop the file in <code>/3ds/</code> on the SD card</td></tr>
-      <tr><th scope="row">Uses install space</th><td>Yes</td><td>No</td></tr>
-    </tbody>
-  </table>
+    <a class="topic" href="online.html"
+       data-keywords="online pretendo nimbus netpass streetpass multiplayer internet servers nintendo network">
+      <span class="ico">🌐</span>
+      <h2>Online play</h2>
+      <p>Pretendo and NetPass bring back online features Nintendo switched off.</p>
+    </a>
 
-  <div class="callout tip">
-    <strong>Rule of thumb:</strong> if an app offers a <code>.cia</code>, take it. It puts a normal icon on your Home Menu and is easier to launch. Only use <code>.3dsx</code> when that's the only option.
+    <a class="topic" href="links.html"
+       data-keywords="links guides help forums reference documentation gbatemp reddit discord wiki hacks guide">
+      <span class="ico">🔗</span>
+      <h2>Links &amp; help</h2>
+      <p>Guides, app pages, and where to ask when something goes wrong.</p>
+    </a>
+
   </div>
 
-  <h3>Installing a <code>.cia</code> with FBI</h3>
-  <ol>
-    <li>Open <strong>FBI</strong> from your Home Menu</li>
-    <li>Select <strong>SD</strong></li>
-    <li>Browse to the folder holding the file (yours are in <code>cias</code>)</li>
-    <li>Press <kbd>A</kbd> on the file → <strong>Install and delete CIA</strong></li>
-    <li>Wait. The icon appears on your Home Menu.</li>
-  </ol>
-  <p>To install a whole folder at once, highlight the folder itself and choose <strong>Install and delete all CIAs</strong>. That's the fast way to do the <code>cias</code> folder and the <code>cias/cores</code> folder.</p>
+  <p class="noresults" id="noresults" hidden>No topic matches that. Try <button type="button" class="linkish" data-q="games">games</button>, <button type="button" class="linkish" data-q="theme">theme</button>, or <button type="button" class="linkish" data-q="backup">backup</button>.</p>
 
-  <figure class="shot" data-img="fbi-install.png" data-cap="FBI installing a CIA from the SD card"></figure>
+  <section class="quick">
+    <h2>Quick answers</h2>
+    <dl>
+      <dt>Where do I put game files?</dt>
+      <dd><code>/roms/</code> on the SD card, in the folder for that system. <a href="games.html">Playing games →</a></dd>
 
-  <h3>Universal Updater <span class="tag">your app store</span></h3>
-  <p>This is the app you'll use most for maintenance. It's a browsable catalogue of 3DS homebrew that downloads and installs in one step, with no computer involved.</p>
-  <ol>
-    <li>Open <strong>Universal Updater</strong></li>
-    <li>Browse or search</li>
-    <li>Press <kbd>A</kbd> on an app, pick the <code>.cia</code> download</li>
-    <li>It installs itself</li>
-  </ol>
-  <p>Every app on your console came from here, so it's also how you <strong>update</strong> them later. If something seems out of date, check here first.</p>
+      <dt>How do I install an app I downloaded?</dt>
+      <dd>Open it in FBI → <em>Install and delete CIA</em>. <a href="apps.html">Installing apps →</a></dd>
 
-  <figure class="shot" data-img="universal-updater.png" data-cap="Universal Updater's app list"></figure>
+      <dt>How do I take a screenshot?</dt>
+      <dd><kbd>L</kbd>+<kbd>↓</kbd>+<kbd>Select</kbd> → Take screenshot. <a href="menus.html">Hidden menus →</a></dd>
 
-  <h3>What's already installed</h3>
-  <table>
-    <thead><tr><th>App</th><th>What it does</th></tr></thead>
-    <tbody>
-      <tr><td><strong>FBI</strong></td><td>Installs <code>.cia</code> files</td></tr>
-      <tr><td><strong>Universal Updater</strong></td><td>Homebrew app store</td></tr>
-      <tr><td><strong>Anemone3DS</strong></td><td>Themes and boot splashes</td></tr>
-      <tr><td><strong>Checkpoint</strong></td><td>Backs up and restores game saves</td></tr>
-      <tr><td><strong>ftpd</strong></td><td>Wireless file transfer</td></tr>
-      <tr><td><strong>GodMode9</strong></td><td>Low-level file manager (payload menu)</td></tr>
-      <tr><td><strong>TWiLight Menu++</strong></td><td>Plays DS games</td></tr>
-      <tr><td><strong>RetroArch</strong></td><td>Multi-system emulator</td></tr>
-      <tr><td><strong>Snes9x</strong></td><td>SNES emulator (better than RetroArch's)</td></tr>
-      <tr><td><strong>3hs</strong></td><td>hShop client</td></tr>
-      <tr><td><strong>Nimbus</strong></td><td>Switches online play to Pretendo</td></tr>
-      <tr><td><strong>NetPass</strong></td><td>Revives StreetPass over the internet</td></tr>
-    </tbody>
-  </table>
-</section>
+      <dt>Is it safe to update the system?</dt>
+      <dd>Yes, but there's no reason to. <a href="safety.html">Safety →</a></dd>
 
-<!-- ═══════════════════════════════ HSHOP ═══════════════════════════════ -->
-<section id="hshop">
-  <h2>hShop</h2>
-
-  <p>Nintendo permanently closed the 3DS eShop in <strong>March 2023</strong>. There is no official way left to buy digital 3DS games. <a href="https://hshop.erista.me/" rel="noopener">hShop</a> is a community archive that hosts 3DS titles, and <strong>3hs</strong> is its app for downloading them straight to your console.</p>
-
-  <div class="callout warn">
-    hShop hosts commercial games. Downloading titles you don't own is copyright infringement in most countries. Your call — just know what it is.
-  </div>
-
-  <h3>Using 3hs</h3>
-  <ol>
-    <li>Connect the 3DS to Wi-Fi</li>
-    <li>Open <strong>3hs</strong></li>
-    <li>Search or browse by category</li>
-    <li>Press <kbd>A</kbd> on a title → it downloads and installs itself</li>
-  </ol>
-  <p>It handles updates and DLC automatically, queues multiple downloads, and can keep downloading in sleep mode.</p>
-
-  <figure class="shot" data-img="3hs.png" data-cap="Browsing hShop with 3hs"></figure>
-</section>
-
-<!-- ═══════════════════════════════ THEMES ═══════════════════════════════ -->
-<section id="themes">
-  <h2>Custom themes</h2>
-
-  <p><strong>Anemone3DS</strong> changes your Home Menu look and your boot splash. The easiest route needs no computer at all.</p>
-
-  <h3>Straight from the console <span class="tag">easiest</span></h3>
-  <ol>
-    <li>Open <strong>Anemone3DS</strong></li>
-    <li>Press <kbd>L</kbd> to open the <strong>Theme Plaza</strong> browser</li>
-    <li>Find a theme, press <kbd>A</kbd> to download it</li>
-    <li>Back in your list, press <kbd>A</kbd> to install</li>
-  </ol>
-
-  <h3>From a computer</h3>
-  <ol>
-    <li>Download a theme <code>.zip</code> from <a href="https://themeplaza.art/" rel="noopener">Theme Plaza</a></li>
-    <li>Drop the <code>.zip</code> — <em>don't unzip it</em> — into <code>/themes/</code> on the SD card</li>
-    <li>Open Anemone3DS and install it</li>
-  </ol>
-
-  <table>
-    <thead><tr><th>Folder</th><th>Holds</th></tr></thead>
-    <tbody>
-      <tr><td><code>/themes/</code></td><td>Home Menu themes</td></tr>
-      <tr><td><code>/splashes/</code></td><td>Boot splash screens</td></tr>
-    </tbody>
-  </table>
-
-  <p>Both folders already exist on your card. Anemone also handles badges and can preview anything before you commit with <kbd>Y</kbd>.</p>
-
-  <figure class="shot" data-img="anemone.png" data-cap="Anemone3DS browsing Theme Plaza"></figure>
-</section>
-
-<!-- ═══════════════════════════════ GAMES ═══════════════════════════════ -->
-<section id="games">
-  <h2>Playing games</h2>
-
-  <p>Different systems use different apps. This table is the whole answer — the sections below just add detail.</p>
-
-  <table class="routing">
-    <thead><tr><th>System</th><th>Use</th><th>Put games in</th></tr></thead>
-    <tbody>
-      <tr><td>Nintendo DS</td><td>TWiLight Menu++</td><td><code>/roms/nds/</code></td></tr>
-      <tr><td>Game Boy Advance</td><td>open_agb_firm <span class="tag">payload</span></td><td><code>/roms/gba/</code></td></tr>
-      <tr><td>SNES</td><td>Snes9x</td><td><code>/roms/snes/</code></td></tr>
-      <tr><td>Neo Geo</td><td>RetroArch → FB Alpha Neo Geo</td><td><code>/roms/neogeo/</code></td></tr>
-      <tr><td>Game Boy / Color</td><td>RetroArch → Gambatte</td><td><code>/roms/gb/</code>, <code>/roms/gbc/</code></td></tr>
-      <tr><td>NES</td><td>RetroArch → FCEUmm</td><td><code>/roms/nes/</code></td></tr>
-      <tr><td>Genesis / Mega Drive</td><td>RetroArch → Picodrive</td><td><code>/roms/md/</code></td></tr>
-    </tbody>
-  </table>
-
-  <div class="callout tip">
-    Those folders already exist on your SD card. Drop game files straight in — no renaming, no setup.
-  </div>
-
-  <h3 id="ds">Nintendo DS — TWiLight Menu++</h3>
-  <p>Put <code>.nds</code> files in <code>/roms/nds/</code>, then open <strong>TWiLight Menu++</strong> from your Home Menu and pick a game. It runs DS games at full speed on real hardware, not emulation, so compatibility is very high.</p>
-  <p>Press <kbd>Y</kbd> on a game for per-game settings if one misbehaves.</p>
-
-  <figure class="shot" data-img="twilight.png" data-cap="TWiLight Menu++ game list"></figure>
-
-  <h3 id="gba">Game Boy Advance — open_agb_firm</h3>
-  <p>GBA works differently: the 3DS has real GBA hardware inside, and <strong>open_agb_firm</strong> uses it directly. Perfect accuracy and battery life, but it takes over the console, so you reboot to switch games.</p>
-  <ol>
-    <li>Power the console fully <strong>off</strong></li>
-    <li>Hold <kbd>Start</kbd> and power on</li>
-    <li>Choose <strong>open_agb_firm</strong></li>
-    <li>Browse to <code>/roms/gba/</code> and pick a game</li>
-    <li>To leave, power off and boot normally</li>
-  </ol>
-  <p>Saves are written to the SD card automatically, and save types are detected for you.</p>
-
-  <div class="callout do">
-    <strong>Pokémon Unbound is already installed</strong>, at <code>/roms/gba/Pokemon Unbound.gba</code>. It's a large fan-made ROM hack of Pokémon FireRed with a new region, story, and difficulty modes. Launch it the way described above.
-  </div>
-
-  <figure class="shot" data-img="open-agb-firm.png" data-cap="open_agb_firm's game browser"></figure>
-
-  <h3 id="snes">SNES — Snes9x</h3>
-  <p>Put <code>.smc</code> or <code>.sfc</code> files in <code>/roms/snes/</code> and open <strong>Snes9x</strong>. This standalone app is noticeably faster than RetroArch's SNES cores on an original 3DS, so use it rather than RetroArch for SNES.</p>
-
-  <h3 id="retroarch">Everything else — RetroArch</h3>
-  <p>RetroArch is one app that loads a separate <strong>core</strong> for each system. Your console has these installed:</p>
-  <table>
-    <thead><tr><th>Core</th><th>System</th></tr></thead>
-    <tbody>
-      <tr><td>FB Alpha 2012 Neo Geo</td><td>Neo Geo</td></tr>
-      <tr><td>Gambatte</td><td>Game Boy / Game Boy Color</td></tr>
-      <tr><td>FCEUmm</td><td>NES</td></tr>
-      <tr><td>Picodrive</td><td>Genesis / Mega Drive</td></tr>
-      <tr><td>Genesis Plus GX</td><td>Genesis (more accurate, slower)</td></tr>
-      <tr><td>Snes9x 2005</td><td>SNES backup — prefer the standalone Snes9x</td></tr>
-    </tbody>
-  </table>
-  <p>To play something: <strong>Load Core</strong> → pick the core → <strong>Load Content</strong> → find your game.</p>
-
-  <div class="callout warn">
-    <strong>Neo Geo needs a BIOS.</strong> Neo Geo games won't start without a <code>neogeo.zip</code> BIOS file sitting alongside them in <code>/roms/neogeo/</code>. Keep games zipped — don't extract them.
-  </div>
-
-  <h3 id="vc">A note on "Virtual Console injections"</h3>
-  <p>You may see guides about <em>injecting</em> retro games so they appear as real Home Menu icons. It's a legitimate technique, but on your setup it's mostly unnecessary work: the apps above already play these systems, and injection requires a Windows tool plus a rebuild for every single game.</p>
-  <p>The one case where it genuinely wins is <strong>GBA</strong>, because injected GBA games run on the real hardware without rebooting. If you decide you want that, the standard tool is <a href="https://gbatemp.net/threads/new-super-ultimate-injector-3ds.539175/" rel="noopener">New Super Ultimate Injector</a> (Windows).</p>
-</section>
-
-<!-- ═══════════════════════════════ FILES ═══════════════════════════════ -->
-<section id="files">
-  <h2>Moving files onto the console</h2>
-
-  <p>Two ways. The SD card is faster for bulk transfers; FTP is far more convenient for one or two files.</p>
-
-  <h3>Wirelessly from an Android phone <span class="tag">no cable</span></h3>
-  <p><strong>ftpd</strong> turns the 3DS into a file server on your Wi-Fi.</p>
-  <ol>
-    <li>Connect the 3DS to the same Wi-Fi as your phone</li>
-    <li>Open <strong>ftpd</strong> on the 3DS — it shows an address like <code>192.168.1.115:5000</code></li>
-    <li>On Android, install an FTP-capable file manager. <a href="https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer" rel="noopener">CX File Explorer</a> and <a href="https://f-droid.org/packages/me.zhanghai.android.files/" rel="noopener">Material Files</a> both work and are free.</li>
-    <li>Add a new <strong>FTP</strong> connection:
-      <ul class="tight">
-        <li><strong>Host:</strong> the IP shown on the 3DS (e.g. <code>192.168.1.115</code>)</li>
-        <li><strong>Port:</strong> <code>5000</code></li>
-        <li><strong>Anonymous / no username or password</strong></li>
-      </ul>
-    </li>
-    <li>You're now browsing the SD card. Copy files into <code>/roms/…</code> or <code>/cias/</code> as needed.</li>
-  </ol>
-
-  <div class="callout tip">
-    Leave ftpd open on the 3DS while transferring — closing it drops the connection. Big transfers are much quicker via the SD card in a computer.
-  </div>
-
-  <figure class="shot" data-img="ftpd.png" data-cap="ftpd showing its IP address and port"></figure>
-
-  <h3>By SD card</h3>
-  <ol>
-    <li><strong>Power the console fully off</strong> (hold Power, then Power Off — not sleep)</li>
-    <li>Take the SD card out and put it in a computer</li>
-    <li>Copy files into the right folder</li>
-    <li>Safely eject, put it back, power on</li>
-  </ol>
-  <div class="callout warn">
-    Never remove the SD card while the console is on or sleeping. That's the most common way people corrupt a card.
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ SAFETY ═══════════════════════════════ -->
-<section id="safety">
-  <h2>Safety &amp; backups</h2>
-
-  <h3>Your backup exists</h3>
-  <p>During setup, a complete image of your console's internal memory (a <strong>NAND backup</strong>) was made and verified. If the console ever fails to boot because of a software problem, that file restores it.</p>
-  <p>It is <em>not</em> on the SD card — it's stored separately on a computer, because it contains your console's unique encryption keys. Ask whoever set this up if you ever need it.</p>
-
-  <p>One small file, <code>essential.exefs</code>, is kept on the SD card at <code>/gm9/backups/</code>. Leave it there. It's tiny and it's what recovers your data if the hardware ever dies.</p>
-
-  <h3>Back up your game saves</h3>
-  <p><strong>Checkpoint</strong> copies save files for your games onto the SD card. Worth doing before you experiment with anything.</p>
-  <ol>
-    <li>Open <strong>Checkpoint</strong></li>
-    <li>Pick a game</li>
-    <li>Choose <strong>Backup</strong></li>
-  </ol>
-
-  <h3>Rules that keep it healthy</h3>
-  <ul class="tight">
-    <li><strong>Power off fully before removing the SD card.</strong></li>
-    <li><strong>Don't delete files you don't recognise</strong> — especially <code>boot.firm</code>, <code>boot.3dsx</code>, or the <code>boot9strap</code>, <code>luma</code>, and <code>gm9</code> folders. The console won't boot without them.</li>
-    <li><strong>System updates are safe</strong>, but there's no reason to install one.</li>
-    <li><strong>Keep a copy of the SD card.</strong> Cards fail. Copying the whole card to a computer occasionally costs nothing.</li>
-  </ul>
-
-  <div class="callout warn">
-    <strong>If it won't boot:</strong> don't panic and don't keep pressing buttons. A black screen usually means a missing or corrupt file on the SD card, which is recoverable. Take the card out, check it in a computer, and ask for help before trying anything drastic.
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ LINKS ═══════════════════════════════ -->
-<section id="links">
-  <h2>Links</h2>
-
-  <h3>Guides</h3>
-  <ul class="links">
-    <li><a href="https://3ds.hacks.guide/" rel="noopener">3DS Hacks Guide</a> — the canonical modding guide</li>
-    <li><a href="https://wiki.hacks.guide/wiki/3DS:" rel="noopener">Hacks Guide Wiki</a> — per-app reference and alternate methods</li>
-    <li><a href="https://3ds.hacks.guide/faq" rel="noopener">Hacks Guide FAQ</a> — the questions everyone asks</li>
-    <li><a href="https://3ds.hacks.guide/godmode9-usage" rel="noopener">GodMode9 usage</a> — dumping games, backups</li>
-  </ul>
-
-  <h3>Apps</h3>
-  <ul class="links">
-    <li><a href="https://db.universal-team.net/" rel="noopener">Universal-DB</a> — everything Universal Updater can install</li>
-    <li><a href="https://github.com/DS-Homebrew/TWiLightMenu" rel="noopener">TWiLight Menu++</a> · <a href="https://wiki.ds-homebrew.com/twilightmenu/" rel="noopener">docs</a></li>
-    <li><a href="https://github.com/profi200/open_agb_firm" rel="noopener">open_agb_firm</a></li>
-    <li><a href="https://github.com/matbo87/snes9x_3ds" rel="noopener">Snes9x for 3DS</a></li>
-    <li><a href="https://docs.libretro.com/" rel="noopener">RetroArch docs</a></li>
-    <li><a href="https://github.com/astronautlevel2/Anemone3DS" rel="noopener">Anemone3DS</a> · <a href="https://themeplaza.art/" rel="noopener">Theme Plaza</a></li>
-    <li><a href="https://github.com/FlagBrew/Checkpoint" rel="noopener">Checkpoint</a></li>
-    <li><a href="https://github.com/LumaTeam/Luma3DS" rel="noopener">Luma3DS</a></li>
-  </ul>
-
-  <h3>Online services</h3>
-  <ul class="links">
-    <li><a href="https://pretendo.network/" rel="noopener">Pretendo Network</a> — community replacement for Nintendo's shut-down online service (via Nimbus)</li>
-    <li><a href="https://gitlab.com/3ds-netpass/netpass" rel="noopener">NetPass</a> — StreetPass over the internet</li>
-    <li><a href="https://hshop.erista.me/" rel="noopener">hShop</a></li>
-  </ul>
-
-  <h3>Communities</h3>
-  <ul class="links">
-    <li><a href="https://gbatemp.net/forums/nintendo-3ds.271/" rel="noopener">GBAtemp — 3DS forum</a></li>
-    <li><a href="https://www.reddit.com/r/3dshacks/" rel="noopener">r/3dshacks</a></li>
-    <li><a href="https://discord.gg/MWxPgEp" rel="noopener">Nintendo Homebrew Discord</a> — fastest place to get help</li>
-  </ul>
-</section>
+      <dt>It won't turn on properly.</dt>
+      <dd>Don't panic — usually a file on the SD card. <a href="safety.html">Safety →</a></dd>
+    </dl>
+  </section>
 
 </main>
 
 <footer>
   <div class="wrap">
     <p>Old 3DS · firmware 11.6.0-39U · Luma3DS v13.4 · boot9strap 1.4</p>
-    <p class="muted">Set up following <a href="https://3ds.hacks.guide/" rel="noopener">3ds.hacks.guide</a>.</p>
+    <p class="muted">Set up following <a href="https://3ds.hacks.guide/" rel="noopener">3ds.hacks.guide</a>. Screenshots from <a href="https://db.universal-team.net/" rel="noopener">Universal-DB</a> (GPL-3.0).</p>
   </div>
 </footer>
 

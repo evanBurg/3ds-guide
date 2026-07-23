@@ -24,20 +24,50 @@ document.querySelectorAll('.shot[data-img]').forEach((fig) => {
   img.src = 'img/' + name;
 });
 
-// Highlight the section currently in view in the sticky nav.
-const links = [...document.querySelectorAll('.toc a')];
-const byId = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
-const sections = [...document.querySelectorAll('main section[id]')];
+const search = document.getElementById('search');
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      links.forEach((a) => a.classList.remove('active'));
-      byId.get(entry.target.id)?.classList.add('active');
+if (search) {
+  const cards = [...document.querySelectorAll('.topic')];
+  const hint = document.getElementById('hint');
+  const noresults = document.getElementById('noresults');
+
+  // Each card matches on its visible text plus data-keywords, so searching a
+  // console or game name lands on the right topic without naming the page.
+  const haystacks = cards.map((card) =>
+    (card.textContent + ' ' + (card.dataset.keywords || '')).toLowerCase()
+  );
+
+  const apply = (raw) => {
+    const terms = raw.toLowerCase().split(/\s+/).filter(Boolean);
+    let shown = 0;
+
+    cards.forEach((card, i) => {
+      const match = terms.every((t) => haystacks[i].includes(t));
+      card.hidden = !match;
+      if (match) shown++;
     });
-  },
-  { rootMargin: '-15% 0px -75% 0px' }
-);
 
-sections.forEach((s) => observer.observe(s));
+    noresults.hidden = shown > 0;
+    hint.textContent = terms.length
+      ? shown + (shown === 1 ? ' topic matches' : ' topics match')
+      : cards.length + ' topics';
+  };
+
+  search.addEventListener('input', () => apply(search.value));
+
+  noresults.querySelectorAll('[data-q]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      search.value = btn.dataset.q;
+      apply(search.value);
+      search.focus();
+    });
+  });
+
+  // "/" focuses search, matching the convention on docs sites.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement !== search) {
+      e.preventDefault();
+      search.focus();
+    }
+  });
+}

@@ -1,54 +1,84 @@
 # Your Modded 3DS — Owner's Guide
 
-A single-page reference for a modded Nintendo 3DS: installing apps, custom
-themes, and playing DS, GBA, SNES, Neo Geo, Game Boy, NES and Genesis games.
+A small static site documenting a modded Nintendo 3DS: installing apps, custom
+themes, online play, and playing DS, GBA, SNES, Neo Geo, Game Boy, NES and
+Genesis games. Written for someone with no prior homebrew knowledge.
 
-Written for someone with no prior homebrew knowledge.
+## Structure
+
+A homepage that acts as a searchable launcher, plus one page per topic.
+
+| Page | Covers |
+|---|---|
+| `index.html` | Search + topic cards + quick answers |
+| `apps.html` | `.cia` vs `.3dsx`, FBI, Universal Updater |
+| `games.html` | Per-system routing: DS, GBA, SNES, Neo Geo, GB, NES, Genesis |
+| `menus.html` | Rosalina, Luma config, payload menu |
+| `themes.html` | Anemone3DS, Theme Plaza |
+| `files.html` | FTP from Android, SD card transfers |
+| `hshop.html` | hShop and the 3hs client |
+| `online.html` | Pretendo (Nimbus), NetPass |
+| `safety.html` | NAND backup, Checkpoint, care rules |
+| `links.html` | Guides, app pages, communities |
+
+Search filters the topic cards on card text plus each card's `data-keywords`,
+so typing a console or game name ("gba", "pokemon", "neo geo") finds the right
+page without knowing what it's called. `/` focuses the search box.
 
 ## Hosting on GitHub Pages
 
-No build step. Plain HTML, CSS and one small JS file.
+No build step. Plain HTML, CSS and one JS file.
 
 1. **Settings → Pages**
 2. **Source:** Deploy from a branch
 3. **Branch:** `main`, folder `/ (root)`
 4. Save. The site appears at `https://<user>.github.io/3ds-guide/`
 
-## Adding screenshots
+## Screenshots
 
-Every screenshot slot renders as a labelled placeholder until the image
-exists, so the site is usable right away and improves as you add them.
+Slots render as labelled placeholders until the image exists, so the site is
+usable as-is and improves as images land in `img/`.
 
-Capture them on the console itself:
+**Already filled** — sourced from [Universal-DB](https://db.universal-team.net/) (GPL-3.0):
 
-1. Open the thing you want to show
-2. Press <kbd>L</kbd> + <kbd>Down</kbd> + <kbd>Select</kbd> for Rosalina
-3. Choose **Take screenshot**
-4. Images land in `/luma/screenshots/` on the SD card
-
-Then copy the file into `img/` using the filename the placeholder names.
-
-| Filename | Shows |
+| File | Shows |
 |---|---|
-| `rosalina.png` | Rosalina menu open mid-game |
+| `universal-updater.png` | Universal Updater download list |
+| `anemone.png` | Anemone3DS browsing Theme Plaza |
+| `ftpd.png` | ftpd showing its IP and port |
+| `snes9x.png` | Snes9x in-game with cheats menu |
+| `nimbus.png` | Nimbus switching to Pretendo |
+
+**Still placeholders** — no cleanly-licensed source exists, so capture these on
+the console itself:
+
+| File | Shows |
+|---|---|
 | `fbi-install.png` | FBI installing a CIA |
-| `universal-updater.png` | Universal Updater app list |
-| `3hs.png` | Browsing hShop in 3hs |
-| `anemone.png` | Anemone3DS / Theme Plaza |
+| `rosalina.png` | Rosalina menu open mid-game |
 | `twilight.png` | TWiLight Menu++ game list |
 | `open-agb-firm.png` | open_agb_firm file browser |
-| `ftpd.png` | ftpd showing IP and port |
+| `3hs.png` | Browsing hShop in 3hs |
 
-Rosalina writes two files per capture (top and bottom screen). Use whichever
-is clearer, or crop them together. No resizing needed — the CSS scales them.
+To capture: open the thing you want to show, press
+<kbd>L</kbd>+<kbd>Down</kbd>+<kbd>Select</kbd> for Rosalina, choose **Take
+screenshot**. Images land in `/luma/screenshots/` on the SD card. Rosalina
+writes one file per screen — the site's CSS expects the stacked 400×480 format
+used by the existing images, so combine top and bottom, or just use whichever
+screen is clearer. No resizing needed.
+
+## Attribution
+
+Screenshots are from [Universal-DB](https://github.com/Universal-Team/db),
+GPL-3.0, credited in each page footer.
 
 ## Console this documents
 
 Old 3DS · firmware 11.6.0-39U · Luma3DS v13.4 · boot9strap 1.4,
 set up following [3ds.hacks.guide](https://3ds.hacks.guide/).
 
-## Editing
+## Adding a topic
 
-`index.html` holds all content. Section order is the reading order, and the
-sticky nav is generated from the same IDs — add a `<section id="…">` and a
-matching link in `.toc` to add a topic.
+1. Copy any topic page as a starting point (they share `style.css` / `app.js`)
+2. Add a `.topic` card to `index.html` with a `data-keywords` list covering
+   what someone might actually type to find it

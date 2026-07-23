@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moving files — Your Modded 3DS</title>
+<meta name="description" content="Send files to the 3DS wirelessly from an Android phone with ftpd, or by SD card.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+
+<header class="pagehead">
+  <div class="wrap">
+    <a class="back" href="index.html">← All topics</a>
+    <h1>📡 Moving files</h1>
+    <p class="lede">Two ways. The SD card is faster for bulk transfers; FTP is far more convenient for one or two files.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<h2>Wirelessly from an Android phone <span class="tag">no cable</span></h2>
+<p><strong>ftpd</strong> turns the 3DS into a file server on your Wi-Fi.</p>
+<ol>
+  <li>Connect the 3DS to the same Wi-Fi as your phone</li>
+  <li>Open <strong>ftpd</strong> on the 3DS — it displays an address like <code>10.0.0.236:5000</code></li>
+  <li>On Android, install an FTP-capable file manager. <a href="https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer" rel="noopener">CX File Explorer</a> and <a href="https://f-droid.org/packages/me.zhanghai.android.files/" rel="noopener">Material Files</a> are both free and work well.</li>
+  <li>Add a new <strong>FTP</strong> connection:
+    <ul class="tight">
+      <li><strong>Host:</strong> the IP shown on the 3DS</li>
+      <li><strong>Port:</strong> <code>5000</code></li>
+      <li><strong>Anonymous</strong> — no username or password</li>
+    </ul>
+  </li>
+  <li>You're now browsing the SD card. Copy files into <code>/roms/…</code> or <code>/cias/</code> as needed.</li>
+</ol>
+
+<figure class="shot" data-img="ftpd.png" data-cap="ftpd showing its IP address and port — yours will differ"></figure>
+
+<div class="callout tip">
+  Leave ftpd open on the 3DS while transferring; closing it drops the connection. For anything large, the SD card is much quicker.
+</div>
+
+<h2>By SD card</h2>
+<ol>
+  <li><strong>Power the console fully off</strong> — hold Power, then Power Off. Not sleep.</li>
+  <li>Take the SD card out and put it in a computer</li>
+  <li>Copy files into the right folder</li>
+  <li>Safely eject, put it back, power on</li>
+</ol>
+
+<div class="callout warn">
+  Never remove the SD card while the console is on or sleeping. That's the most common way people corrupt a card.
+</div>
+
+<h2>Where things go</h2>
+<table>
+  <thead><tr><th>Putting this on</th><th>Goes here</th></tr></thead>
+  <tbody>
+    <tr><td>Game files</td><td><code>/roms/</code> — see <a href="games.html">Playing games</a></td></tr>
+    <tr><td>Apps to install (<code>.cia</code>)</td><td><code>/cias/</code> — see <a href="apps.html">Installing apps</a></td></tr>
+    <tr><td>Homebrew (<code>.3dsx</code>)</td><td><code>/3ds/</code></td></tr>
+    <tr><td>Themes</td><td><code>/themes/</code> — see <a href="themes.html">Custom themes</a></td></tr>
+  </tbody>
+</table>
+
+<nav class="pagenav">
+  <a href="safety.html">Safety &amp; backups →</a>
+  <a href="index.html">All topics</a>
+</nav>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="muted">Screenshots from <a href="https://db.universal-team.net/" rel="noopener">Universal-DB</a> (GPL-3.0).</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installing apps — Your Modded 3DS</title>
+<meta name="description" content="What .cia and .3dsx mean, installing with FBI, and using Universal Updater.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+
+<header class="pagehead">
+  <div class="wrap">
+    <a class="back" href="index.html">← All topics</a>
+    <h1>📦 Installing apps</h1>
+    <p class="lede">How homebrew gets onto your console, and how to keep it updated.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="callout do">
+  <strong>Haven't done this yet?</strong> Open <strong>FBI</strong>, go to <em>SD → cias</em>, highlight the folder and choose <strong>Install and delete all CIAs</strong>. Then repeat for <em>cias/cores</em>. That installs everything in one go.
+</div>
+
+<h2>The two file types</h2>
+<p>Homebrew comes in two formats. This trips everyone up once, then never again.</p>
+
+<table>
+  <thead>
+    <tr><th></th><th><code>.cia</code></th><th><code>.3dsx</code></th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">What it is</th><td>A real installed app</td><td>A loose program file</td></tr>
+    <tr><th scope="row">Where it appears</th><td>Icon on your Home Menu, like any game</td><td>Only inside the Homebrew Launcher</td></tr>
+    <tr><th scope="row">How to install</th><td>Open it in <strong>FBI</strong> → <em>Install and delete CIA</em></td><td>Drop the file in <code>/3ds/</code> on the SD card</td></tr>
+    <tr><th scope="row">Uses install space</th><td>Yes</td><td>No</td></tr>
+  </tbody>
+</table>
+
+<div class="callout tip">
+  <strong>Rule of thumb:</strong> if an app offers a <code>.cia</code>, take it. It puts a normal icon on your Home Menu and is easier to launch. Only use <code>.3dsx</code> when that's the only option.
+</div>
+
+<h2>Installing a <code>.cia</code> with FBI</h2>
+<ol>
+  <li>Open <strong>FBI</strong> from your Home Menu</li>
+  <li>Select <strong>SD</strong></li>
+  <li>Browse to the folder holding the file</li>
+  <li>Press <kbd>A</kbd> on the file → <strong>Install and delete CIA</strong></li>
+  <li>Wait. The icon appears on your Home Menu.</li>
+</ol>
+<p>To install a whole folder at once, highlight the folder itself and choose <strong>Install and delete all CIAs</strong>.</p>
+
+<figure class="shot" data-img="fbi-install.png" data-cap="FBI installing a CIA from the SD card"></figure>
+
+<h2>Universal Updater <span class="tag">your app store</span></h2>
+<p>This is the app you'll use most. It's a browsable catalogue of 3DS homebrew that downloads and installs in one step, with no computer involved.</p>
+<ol>
+  <li>Open <strong>Universal Updater</strong></li>
+  <li>Browse or search</li>
+  <li>Press <kbd>A</kbd> on an app, pick the <code>.cia</code> download</li>
+  <li>It installs itself</li>
+</ol>
+<p>Every app on your console came from here, so it's also how you <strong>update</strong> them later. If something seems out of date, check here first.</p>
+
+<figure class="shot" data-img="universal-updater.png" data-cap="Universal Updater — picking a download for TWiLight Menu++"></figure>
+
+<h2>Running a <code>.3dsx</code></h2>
+<p>These live in <code>/3ds/</code> on the SD card and only appear inside the <strong>Homebrew Launcher</strong>. Open that from your Home Menu, and you'll see a list of everything in that folder.</p>
+<p>On your console, <strong>Balatro</strong> is the one app that works this way.</p>
+
+<h2>What's already installed</h2>
+<table>
+  <thead><tr><th>App</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td><strong>FBI</strong></td><td>Installs <code>.cia</code> files</td></tr>
+    <tr><td><strong>Universal Updater</strong></td><td>Homebrew app store</td></tr>
+    <tr><td><strong>Anemone3DS</strong></td><td><a href="themes.html">Themes and boot splashes</a></td></tr>
+    <tr><td><strong>Checkpoint</strong></td><td><a href="safety.html">Backs up game saves</a></td></tr>
+    <tr><td><strong>ftpd</strong></td><td><a href="files.html">Wireless file transfer</a></td></tr>
+    <tr><td><strong>GodMode9</strong></td><td><a href="menus.html">Low-level file manager</a></td></tr>
+    <tr><td><strong>TWiLight Menu++</strong></td><td><a href="games.html">Plays DS games</a></td></tr>
+    <tr><td><strong>RetroArch</strong></td><td><a href="games.html">Multi-system emulator</a></td></tr>
+    <tr><td><strong>Snes9x</strong></td><td><a href="games.html">SNES emulator</a></td></tr>
+    <tr><td><strong>3hs</strong></td><td><a href="hshop.html">hShop client</a></td></tr>
+    <tr><td><strong>Nimbus</strong></td><td><a href="online.html">Switches online play to Pretendo</a></td></tr>
+    <tr><td><strong>NetPass</strong></td><td><a href="online.html">Revives StreetPass</a></td></tr>
+  </tbody>
+</table>
+
+<nav class="pagenav">
+  <a href="games.html">Playing games →</a>
+  <a href="index.html">All topics</a>
+</nav>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="muted">Screenshots from <a href="https://db.universal-team.net/" rel="noopener">Universal-DB</a> (GPL-3.0).</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
