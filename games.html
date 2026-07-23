@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Playing games — Your Modded 3DS</title>
+<title>Playing games · Your Modded 3DS</title>
 <meta name="description" content="Which app plays which system: DS, Game Boy Advance, SNES, Neo Geo, Game Boy, NES and Genesis.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
@@ -34,17 +34,17 @@
 </table>
 
 <div class="callout tip">
-  Those folders already exist on your SD card. Drop game files straight in — no renaming, no setup. See <a href="files.html">Moving files</a> for how to get them there.
+  Those folders already exist on your SD card. Drop game files straight in, no renaming, no setup. See <a href="files.html">Moving files</a> for how to get them there.
 </div>
 
-<h2 id="ds">Nintendo DS — TWiLight Menu++</h2>
+<h2 id="ds">Nintendo DS: TWiLight Menu++</h2>
 <p>Put <code>.nds</code> files in <code>/roms/nds/</code>, then open <strong>TWiLight Menu++</strong> from your Home Menu and pick a game. It runs DS games on the console's real DS hardware rather than emulating them, so compatibility is very high.</p>
 <p>Press <kbd>Y</kbd> on a game for per-game settings if one misbehaves.</p>
 
 <figure class="shot" data-img="twilight.png" data-cap="TWiLight Menu++ game list"></figure>
 
-<h2 id="gba">Game Boy Advance — open_agb_firm</h2>
-<p>GBA works differently. The 3DS has real GBA hardware inside, and <strong>open_agb_firm</strong> uses it directly — perfect accuracy and battery life. The catch is it takes over the console, so you reboot to switch games.</p>
+<h2 id="gba">Game Boy Advance: open_agb_firm</h2>
+<p>GBA works differently. The 3DS has real GBA hardware inside, and <strong>open_agb_firm</strong> uses it directly, giving perfect accuracy and battery life. The catch is it takes over the console, so you reboot to switch games.</p>
 <ol>
   <li>Power the console fully <strong>off</strong></li>
   <li>Hold <kbd>Start</kbd> and power on</li>
@@ -60,13 +60,13 @@
 
 <figure class="shot" data-img="open-agb-firm.png" data-cap="open_agb_firm's game browser"></figure>
 
-<h2 id="snes">SNES — Snes9x</h2>
+<h2 id="snes">SNES: Snes9x</h2>
 <p>Put <code>.smc</code> or <code>.sfc</code> files in <code>/roms/snes/</code> and open <strong>Snes9x</strong>. This standalone app is noticeably faster than RetroArch's SNES cores on an original 3DS, so use it rather than RetroArch for SNES.</p>
-<p>Press <kbd>Select</kbd> in-game for the menu — save states, controls, and per-game cheats.</p>
+<p>Press <kbd>Select</kbd> in-game for the menu: save states, controls, and per-game cheats.</p>
 
 <figure class="shot" data-img="snes9x.png" data-cap="Snes9x in-game, with the cheats menu open"></figure>
 
-<h2 id="retroarch">Everything else — RetroArch</h2>
+<h2 id="retroarch">Everything else: RetroArch</h2>
 <p>RetroArch is one app that loads a separate <strong>core</strong> for each system. Your console has these installed:</p>
 <table>
   <thead><tr><th>Core</th><th>System</th></tr></thead>
@@ -75,14 +75,14 @@
     <tr><td>Gambatte</td><td>Game Boy / Game Boy Color</td></tr>
     <tr><td>FCEUmm</td><td>NES</td></tr>
     <tr><td>Picodrive</td><td>Genesis / Mega Drive</td></tr>
-    <tr><td>Genesis Plus GX</td><td>Genesis — more accurate, slower</td></tr>
-    <tr><td>Snes9x 2005</td><td>SNES backup — prefer the standalone Snes9x</td></tr>
+    <tr><td>Genesis Plus GX</td><td>Genesis, more accurate but slower</td></tr>
+    <tr><td>Snes9x 2005</td><td>SNES backup, prefer the standalone Snes9x</td></tr>
   </tbody>
 </table>
 <p>To play something: <strong>Load Core</strong> → pick the core → <strong>Load Content</strong> → find your game.</p>
 
 <div class="callout warn">
-  <strong>Neo Geo needs a BIOS.</strong> Neo Geo games won't start without a <code>neogeo.zip</code> BIOS file sitting alongside them in <code>/roms/neogeo/</code>. Keep the games zipped — don't extract them.
+  <strong>Neo Geo needs a BIOS.</strong> Neo Geo games won't start without a <code>neogeo.zip</code> BIOS file sitting alongside them in <code>/roms/neogeo/</code>. Keep the games zipped, don't extract them.
 </div>
 
 <h2 id="vc">A note on "Virtual Console injections"</h2>

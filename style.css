@@ -57,7 +57,8 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+/* Longhand: a padding shorthand here outranks main's vertical padding. */
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: 20px; padding-right: 20px; }
 
 .skip { position: absolute; left: -9999px; background: var(--accent); color: #fff; padding: 10px 16px; z-index: 10; }
 .skip:focus { left: 8px; top: 8px; }
@@ -84,7 +85,7 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 .pagehead {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  padding: 22px 0 28px;
+  padding: 40px 0 34px;
 }
 .pagehead h1 {
   margin: 0 0 8px;
@@ -96,7 +97,7 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 }
 .back:hover { color: var(--accent); }
 
-main { padding: 32px 0 48px; }
+main { padding-top: 36px; padding-bottom: 52px; }
 
 /* search */
 .searchbar { margin: 0 0 22px; }

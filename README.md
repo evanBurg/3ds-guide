@@ -1,4 +1,4 @@
-# Your Modded 3DS — Owner's Guide
+# Your Modded 3DS: Owner's Guide
 
 A small static site documenting a modded Nintendo 3DS: installing apps, custom
 themes, online play, and playing DS, GBA, SNES, Neo Geo, Game Boy, NES and
@@ -39,7 +39,7 @@ No build step. Plain HTML, CSS and one JS file.
 Slots render as labelled placeholders until the image exists, so the site is
 usable as-is and improves as images land in `img/`.
 
-**Already filled** — sourced from [Universal-DB](https://db.universal-team.net/) (GPL-3.0):
+**Already filled**, sourced from [Universal-DB](https://db.universal-team.net/) (GPL-3.0):
 
 | File | Shows |
 |---|---|
@@ -49,7 +49,7 @@ usable as-is and improves as images land in `img/`.
 | `snes9x.png` | Snes9x in-game with cheats menu |
 | `nimbus.png` | Nimbus switching to Pretendo |
 
-**Still placeholders** — no cleanly-licensed source exists, so capture these on
+**Still placeholders**: no cleanly-licensed source exists, so capture these on
 the console itself:
 
 | File | Shows |
@@ -63,7 +63,7 @@ the console itself:
 To capture: open the thing you want to show, press
 <kbd>L</kbd>+<kbd>Down</kbd>+<kbd>Select</kbd> for Rosalina, choose **Take
 screenshot**. Images land in `/luma/screenshots/` on the SD card. Rosalina
-writes one file per screen — the site's CSS expects the stacked 400×480 format
+writes one file per screen. The site's CSS expects the stacked 400×480 format
 used by the existing images, so combine top and bottom, or just use whichever
 screen is clearer. No resizing needed.
 
