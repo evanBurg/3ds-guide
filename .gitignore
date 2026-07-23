@@ -1,0 +1,23 @@
+# Never commit console-unique files. These contain encryption keys
+# tied to a specific 3DS and must not be published.
+*.exefs
+*sysnand*
+*.bin.sha
+essential*
+
+# Never commit game or app binaries.
+*.cia
+*.3dsx
+*.firm
+*.nds
+*.gba
+*.smc
+*.sfc
+*.gb
+*.gbc
+*.nes
+*.zip
+*.7z
+
+.DS_Store
+Thumbs.db
