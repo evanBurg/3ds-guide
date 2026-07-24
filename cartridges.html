@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physical cartridges · Jamie's 3DS Guide</title>
+<meta name="description" content="Dumping your own 3DS and DS cartridges, and giving DS games their own Home Menu icon with NDSForwarder.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+
+<header class="pagehead">
+  <div class="wrap">
+    <a class="back" href="index.html">← All topics</a>
+    <h1>🎴 Physical cartridges</h1>
+    <p class="lede">Turn a cartridge in the slot into a file on the SD card: a 3DS game becomes an installable CIA, a DS game becomes a ROM — which can then get its own Home Menu icon too.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="callout tip">
+  Dumping a cartridge you own is fine. It's just a personal backup — the point here is to stop needing the physical cart in the slot, not to share the file.
+</div>
+
+<h2 id="3ds">3DS cartridge → CIA, with GodMode9</h2>
+<p>This makes a legit CIA from your own cartridge's actual data, so it installs and plays exactly like a digital game, box art and all.</p>
+<ol>
+  <li>Put the cartridge in the slot, power the console fully <strong>off</strong></li>
+  <li>Hold <kbd>Start</kbd> and power on to reach the payload menu, then choose <strong>GodMode9</strong></li>
+  <li>Select <strong>GAMECART</strong></li>
+  <li>Press <kbd>A</kbd> on the game entry → <strong>Copy to 0:/gm9/out</strong></li>
+  <li>Go to <code>0:/gm9/out</code>, press <kbd>A</kbd> on the dumped file → <strong>NCSD image options</strong> → <strong>Build CIA from file</strong></li>
+  <li>The finished CIA lands in <code>/gm9/out/</code> — install it in <strong>FBI</strong> like any other CIA</li>
+</ol>
+
+<figure class="shot" data-img="godmode9-cia.png" data-cap="GodMode9's NCSD image options, building a CIA from a cartridge dump"></figure>
+
+<h2 id="ds">DS cartridge → ROM, with GodMode9i</h2>
+<p>DS carts need a different tool: <strong>GodMode9i</strong>, the DS-mode counterpart to GodMode9, launched from inside TWiLight Menu++.</p>
+<ol>
+  <li>Put the DS cartridge in the slot</li>
+  <li>Open <strong>TWiLight Menu++</strong> and launch <strong>GodMode9i</strong> from its extras</li>
+  <li>Select <strong>NDS GAMECARD</strong></li>
+  <li>Press <kbd>A</kbd>, then <kbd>A</kbd> again to dump the cart</li>
+  <li>The <code>.nds</code> file lands in <code>/gm9i/out/</code> on the SD card</li>
+  <li>Move it into <code>/roms/nds/</code> — <a href="games.html#ds">TWiLight Menu++'s game list</a> picks it up from there like any other DS game</li>
+</ol>
+
+<h2 id="forwarder">Give it a Home Menu icon, with NDSForwarder</h2>
+<p>TWiLight Menu++'s game list works fine on its own, but a <strong>forwarder</strong> is a small CIA that launches straight into one specific DS game, so it gets its own icon on the Home Menu instead of living inside TWiLight Menu++'s list.</p>
+<ol>
+  <li>Make sure the game's <code>.nds</code> file is already in <code>/roms/nds/</code></li>
+  <li>Open the <strong>Homebrew Launcher</strong> and launch <strong>NDSForwarder</strong></li>
+  <li>Browse to the <code>.nds</code> file and press <kbd>A</kbd></li>
+  <li>Confirm with <strong>Yes</strong> to install</li>
+  <li>The game now has its own icon on the Home Menu, right next to everything else</li>
+</ol>
+
+<div class="callout do">
+  <strong>Want a proper box-art icon instead of the default one?</strong> Drop a 4-bit BMP with the same name as the ROM alongside it before generating the forwarder, and NDSForwarder uses that instead.
+</div>
+
+<figure class="shot" data-img="ndsforwarder.png" data-cap="NDSForwarder generating a Home Menu icon for a DS ROM"></figure>
+
+<div class="callout warn">
+  <strong>If a forwarder won't launch,</strong> it's almost always the <em>nds-bootstrap forwarder pack</em> missing or out of date on the SD card, not the forwarder CIA itself. Reinstall the pack that came with NDSForwarder.
+</div>
+
+<nav class="pagenav">
+  <a href="games.html">Playing games →</a>
+  <a href="index.html">All topics</a>
+</nav>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="muted"><a href="index.html">Jamie's 3DS Guide</a></p>
+    <p class="muted">Screenshots from <a href="https://www.cfwaifu.com/3ds-dump-cartridges/" rel="noopener">cfwaifu</a> and <a href="https://renge-record-book.com/" rel="noopener">renge-record-book.com</a>.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

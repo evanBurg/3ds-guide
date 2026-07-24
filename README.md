@@ -18,6 +18,7 @@ A homepage that acts as a searchable launcher, plus one page per topic.
 | `themes.html` | Anemone3DS, Theme Plaza |
 | `files.html` | FTP from Android, SD card transfers |
 | `hshop.html` | hShop and the 3hs client |
+| `cartridges.html` | Dumping 3DS carts to CIA (GodMode9), DS carts to ROM (GodMode9i), Home Menu icons via NDSForwarder |
 | `online.html` | Pretendo (Nimbus), NetPass |
 | `safety.html` | NAND backup, Checkpoint, care rules |
 | `links.html` | Guides, app pages, communities |
@@ -54,25 +55,22 @@ usable as-is and improves as images land in `img/`.
 | `rosalina.png` | Rosalina menu open mid-game | [Luma3DS README](https://github.com/LumaTeam/Luma3DS) (GPL-3.0) |
 | `nsui.png` | NSUI building a CIA from a ROM | [GameBrew](https://www.gamebrew.org/wiki/New_Super_Ultimate_Injector_3DS) (CC BY-SA 4.0) |
 | `twilight.png` | TWiLight Menu++ game list | [RetroGameBoards forum post](https://canada1.discourse-cdn.com/flex036/uploads/retrogameboards/original/2X/2/21efc3a0987eacb80b83bf417a7b0c8b39a8c565.jpeg) |
+| `open-agb-firm.png` | open_agb_firm game selection | [meltymods](https://meltymods.neocities.org/imgs/neocites-GBA-games.jpg) |
+| `godmode9-cia.png` | GodMode9 building a CIA from a cartridge dump | [cfwaifu](https://www.cfwaifu.com/wp-content/uploads/2019/10/dump-game-sd-3ds-cia-nds-cartridge-godmode9.jpg) |
+| `ndsforwarder.png` | NDSForwarder generating a Home Menu icon | [renge-record-book.com](https://renge-record-book.com/wp-content/uploads/2026/03/2026-03-02_22-30-29.474_bot.bmp) |
 
-**Still a placeholder**: no cleanly-licensed source exists, so capture this on
-the console itself:
-
-| File | Shows |
-|---|---|
-| `open-agb-firm.png` | open_agb_firm file browser |
-
-To capture: open the thing you want to show, press
-<kbd>L</kbd>+<kbd>Down</kbd>+<kbd>Select</kbd> for Rosalina, choose **Take
-screenshot**. Images land in `/luma/screenshots/` on the SD card. Rosalina
-writes one file per screen. The site's CSS expects the stacked 400×480 format
-used by the existing images, so combine top and bottom, or just use whichever
-screen is clearer. No resizing needed.
+All slots are filled. If you ever need to replace one with your own capture,
+press <kbd>L</kbd>+<kbd>Down</kbd>+<kbd>Select</kbd> for Rosalina, choose
+**Take screenshot**. Images land in `/luma/screenshots/` on the SD card.
+Rosalina writes one file per screen. The site's CSS expects the stacked
+400×480 format used by the Universal-DB images, so combine top and bottom, or
+just use whichever screen is clearer. No resizing needed.
 
 ## Attribution
 
-Screenshots are from [Universal-DB](https://github.com/Universal-Team/db),
-GPL-3.0, credited in each page footer.
+Screenshots are credited in the page footers; most are from
+[Universal-DB](https://github.com/Universal-Team/db) (GPL-3.0). See the
+Screenshots table above for the source of each individual image.
 
 ## Console this documents
 

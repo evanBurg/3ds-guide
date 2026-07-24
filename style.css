@@ -96,7 +96,11 @@ main { padding-top: 36px; padding-bottom: 52px; }
   gap: 12px;
 }
 @media (min-width: 620px) { .cards { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 900px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  /* A card alone on the last row (nothing else at 3n+1) sits centered instead of stuck on the left. */
+  .topic:last-child:nth-child(3n+1) { grid-column: 2; }
+}
 
 .topic {
   display: block;
