@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Playing games · Your Modded 3DS</title>
-<meta name="description" content="Which app plays which system: DS, Game Boy Advance, SNES, Neo Geo, Game Boy, NES and Genesis.">
+<title>Playing games · Jamie's 3DS Guide</title>
+<meta name="description" content="Playing DS, Game Boy Advance, SNES, Neo Geo, Game Boy, NES and Genesis games, mostly as Virtual Console injections built with NSUI.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 </head>
@@ -14,37 +14,59 @@
   <div class="wrap">
     <a class="back" href="index.html">← All topics</a>
     <h1>🕹️ Playing games</h1>
-    <p class="lede">Different systems use different apps. The table below is the whole answer.</p>
+    <p class="lede">DS runs natively. Almost everything else plays best as a Virtual Console injection built on a computer — the table below is the whole answer.</p>
   </div>
 </header>
 
 <main class="wrap">
 
 <table class="routing">
-  <thead><tr><th>System</th><th>Use</th><th>Put games in</th></tr></thead>
+  <thead><tr><th>System</th><th>Primary</th><th>No-computer fallback</th><th>Put games in</th></tr></thead>
   <tbody>
-    <tr><td>Nintendo DS</td><td><a href="#ds">TWiLight Menu++</a></td><td><code>/roms/nds/</code></td></tr>
-    <tr><td>Game Boy Advance</td><td><a href="#gba">open_agb_firm</a></td><td><code>/roms/gba/</code></td></tr>
-    <tr><td>SNES</td><td><a href="#snes">Snes9x</a></td><td><code>/roms/snes/</code></td></tr>
-    <tr><td>Neo Geo</td><td><a href="#retroarch">RetroArch</a> → FB Alpha Neo Geo</td><td><code>/roms/neogeo/</code></td></tr>
-    <tr><td>Game Boy / Color</td><td><a href="#retroarch">RetroArch</a> → Gambatte</td><td><code>/roms/gb/</code>, <code>/roms/gbc/</code></td></tr>
-    <tr><td>NES</td><td><a href="#retroarch">RetroArch</a> → FCEUmm</td><td><code>/roms/nes/</code></td></tr>
-    <tr><td>Genesis / Mega Drive</td><td><a href="#retroarch">RetroArch</a> → Picodrive</td><td><code>/roms/md/</code></td></tr>
+    <tr><td>Nintendo DS</td><td><a href="#ds">TWiLight Menu++</a></td><td>—</td><td><code>/roms/nds/</code></td></tr>
+    <tr><td>Game Boy Advance</td><td><a href="#inject">Inject with NSUI</a></td><td><a href="#gba">open_agb_firm</a></td><td><code>/roms/gba/</code></td></tr>
+    <tr><td>SNES</td><td><a href="#inject">Inject with NSUI</a></td><td><a href="#snes">Snes9x</a></td><td><code>/roms/snes/</code></td></tr>
+    <tr><td>NES</td><td><a href="#inject">Inject with NSUI</a></td><td><a href="#retroarch">RetroArch</a> → FCEUmm</td><td><code>/roms/nes/</code></td></tr>
+    <tr><td>Genesis / Mega Drive</td><td><a href="#inject">Inject with NSUI</a></td><td><a href="#retroarch">RetroArch</a> → Picodrive</td><td><code>/roms/md/</code></td></tr>
+    <tr><td>Game Boy / Color</td><td><a href="#inject">Inject with NSUI</a></td><td><a href="#retroarch">RetroArch</a> → Gambatte</td><td><code>/roms/gb/</code>, <code>/roms/gbc/</code></td></tr>
+    <tr><td>Neo Geo</td><td>—</td><td><a href="#retroarch">RetroArch</a> → FB Alpha Neo Geo</td><td><code>/roms/neogeo/</code></td></tr>
   </tbody>
 </table>
 
 <div class="callout tip">
-  Those folders already exist on your SD card. Drop game files straight in, no renaming, no setup. See <a href="files.html">Moving files</a> for how to get them there.
+  Those folders already exist on your SD card. See <a href="files.html">Moving files</a> for how to get ROMs there. Injected games skip the folder entirely — the ROM gets built into a CIA on a computer first.
+</div>
+
+<h2 id="inject">Virtual Console injections <span class="tag">primary method</span></h2>
+<p>An <strong>injection</strong> is a ROM rebuilt into a <code>.cia</code> that Nintendo's real Virtual Console emulator runs, so it plays with the accuracy of the original hardware and gets a normal box-art icon on your Home Menu — not a generic emulator icon. It's how most games are played on this console now.</p>
+<p>The catch: building one takes a Windows computer. The tool is <a href="https://gbatemp.net/threads/new-super-ultimate-injector-3ds.539175/" rel="noopener">New Super Ultimate Injector (NSUI)</a>.</p>
+<ol>
+  <li>On a computer, open NSUI and start a new project</li>
+  <li>Import the ROM — NSUI reads it and fills in most details automatically</li>
+  <li>Click <strong>Download title screen from database</strong> for box art, or set your own icon</li>
+  <li>Build the CIA</li>
+  <li>Copy the finished <code>.cia</code> to the SD card (or send it over Wi-Fi with <a href="files.html">ftpd</a>)</li>
+  <li>On the 3DS, install it in <strong>FBI</strong> exactly like any other CIA</li>
+</ol>
+
+<div class="callout do">
+  <strong>Pokémon and other GBA games with battery saves work fine now.</strong> NSUI injects the real-time clock and larger save sizes these games need, so there's no separate patching step first.
+</div>
+
+<figure class="shot" data-img="nsui.png" data-cap="New Super Ultimate Injector, building a CIA from a ROM"></figure>
+
+<div class="callout warn">
+  <strong>Neo Geo can't be injected.</strong> The 3DS never had a Neo Geo Virtual Console, so there's no base to inject into. Neo Geo always runs through RetroArch, below.
 </div>
 
 <h2 id="ds">Nintendo DS: TWiLight Menu++</h2>
-<p>Put <code>.nds</code> files in <code>/roms/nds/</code>, then open <strong>TWiLight Menu++</strong> from your Home Menu and pick a game. It runs DS games on the console's real DS hardware rather than emulating them, so compatibility is very high.</p>
+<p>DS isn't a Virtual Console system — the 3DS runs DS games on its own real DS hardware. Put <code>.nds</code> files in <code>/roms/nds/</code>, then open <strong>TWiLight Menu++</strong> from your Home Menu and pick a game. Compatibility is very high since nothing is being emulated.</p>
 <p>Press <kbd>Y</kbd> on a game for per-game settings if one misbehaves.</p>
 
 <figure class="shot" data-img="twilight.png" data-cap="TWiLight Menu++ game list"></figure>
 
-<h2 id="gba">Game Boy Advance: open_agb_firm</h2>
-<p>GBA works differently. The 3DS has real GBA hardware inside, and <strong>open_agb_firm</strong> uses it directly, giving perfect accuracy and battery life. The catch is it takes over the console, so you reboot to switch games.</p>
+<h2 id="gba">GBA fallback: open_agb_firm</h2>
+<p>If you'd rather not inject, <strong>open_agb_firm</strong> uses the 3DS's real GBA hardware directly, giving perfect accuracy without a computer. The catch is it takes over the console, so you reboot to switch games — an injected GBA game avoids that entirely.</p>
 <ol>
   <li>Power the console fully <strong>off</strong></li>
   <li>Hold <kbd>Start</kbd> and power on</li>
@@ -60,14 +82,14 @@
 
 <figure class="shot" data-img="open-agb-firm.png" data-cap="open_agb_firm's game browser"></figure>
 
-<h2 id="snes">SNES: Snes9x</h2>
-<p>Put <code>.smc</code> or <code>.sfc</code> files in <code>/roms/snes/</code> and open <strong>Snes9x</strong>. This standalone app is noticeably faster than RetroArch's SNES cores on an original 3DS, so use it rather than RetroArch for SNES.</p>
+<h2 id="snes">SNES fallback: Snes9x</h2>
+<p>Put <code>.smc</code> or <code>.sfc</code> files in <code>/roms/snes/</code> and open <strong>Snes9x</strong>. This standalone app is noticeably faster than RetroArch's SNES cores on an original 3DS, so prefer it over RetroArch when not injecting.</p>
 <p>Press <kbd>Select</kbd> in-game for the menu: save states, controls, and per-game cheats.</p>
 
 <figure class="shot" data-img="snes9x.png" data-cap="Snes9x in-game, with the cheats menu open"></figure>
 
 <h2 id="retroarch">Everything else: RetroArch</h2>
-<p>RetroArch is one app that loads a separate <strong>core</strong> for each system. Your console has these installed:</p>
+<p>RetroArch is one app that loads a separate <strong>core</strong> for each system. It's the fallback for NES, Genesis, Game Boy / Color, and the only option for Neo Geo. Your console has these installed:</p>
 <table>
   <thead><tr><th>Core</th><th>System</th></tr></thead>
   <tbody>
@@ -76,7 +98,7 @@
     <tr><td>FCEUmm</td><td>NES</td></tr>
     <tr><td>Picodrive</td><td>Genesis / Mega Drive</td></tr>
     <tr><td>Genesis Plus GX</td><td>Genesis, more accurate but slower</td></tr>
-    <tr><td>Snes9x 2005</td><td>SNES backup, prefer the standalone Snes9x</td></tr>
+    <tr><td>Snes9x 2005</td><td>SNES backup, prefer the standalone Snes9x or an injection</td></tr>
   </tbody>
 </table>
 <p>To play something: <strong>Load Core</strong> → pick the core → <strong>Load Content</strong> → find your game.</p>
@@ -84,14 +106,6 @@
 <div class="callout warn">
   <strong>Neo Geo needs a BIOS.</strong> Neo Geo games won't start without a <code>neogeo.zip</code> BIOS file sitting alongside them in <code>/roms/neogeo/</code>. Keep the games zipped, don't extract them.
 </div>
-
-<h2 id="vc">A note on "Virtual Console injections"</h2>
-<p>You may see guides about <em>injecting</em> retro games so they appear as real Home Menu icons. It's a legitimate technique, but on your setup it's mostly unnecessary work: the apps above already play these systems, and injection needs a Windows tool plus a rebuild for every single game.</p>
-<p>Two things worth knowing:</p>
-<ul class="tight">
-  <li><strong>Neo Geo cannot be injected.</strong> The 3DS never had a Neo Geo Virtual Console, so there's no base game to inject into. Neo Geo runs through RetroArch, as above.</li>
-  <li><strong>GBA is the one case where injection genuinely wins</strong>, because injected GBA games get Home Menu icons and don't need a reboot. The standard tool is <a href="https://gbatemp.net/threads/new-super-ultimate-injector-3ds.539175/" rel="noopener">New Super Ultimate Injector</a> (Windows only).</li>
-</ul>
 
 <nav class="pagenav">
   <a href="files.html">Moving files →</a>
